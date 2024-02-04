@@ -9,6 +9,76 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Main Page -->
+  <div id="main-wrapper">
+    <!-- Header -->
+    <div class="header" id="main-header" hidden>
+      <h1>RateMyAnime</h1>
+    </div>
+    <!-- Search Bar -->
+    <form id="form">
+      <label hidden>Search Anime</label>
+      <input type="text" id="search" placeholder="Search for Anime...">
+      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <!-- Dark Mode Switch -->
+    <div class="theme-switch-wrapper">
+      <!-- Icon for Switch -->
+      <span id="toggle-icon" hidden>
+        <span class="toggle-text">Light Mode</span>
+        <i class="fa-solid fa-sun"></i>
+      </span>
+      <!-- Slider -->
+      <label class="theme-switch" hidden>
+        <input type="checkbox" id="dark-mode-toggle">
+        <div class="slider-round"></div>
+      </label>
+    </div>
+    <!-- My List Button -->
+    <div class="my-list" hidden>
+      <button id="list-btn">My Anime List</button>
+    </div>
+  </div>
+  <!-- Dynamic Anime Pages -->
+  <div id="anime-page-container">
+    <!-- Title EN/JP-->
+    <div class="title">
+      <h2></h2>
+      <h2></h2>
+    </div>
+    <!-- Image -->
+    <div class="img-container">
+      <img>
+    </div>
+    <!-- Score Section -->
+    <div class="score-container">
+      <div id="scores">
+        <h3></h3> 
+        <h3></h3>
+        <h3></h3>
+      </div>
+      <div id="rate">
+        <label for="rank-select"></label>
+        <select id="rank-select">
+          <option value="">Rate Anime</option>
+          <option value="10">(10)Masterpiece</option>
+          <option value="9">(9)Great</option>
+          <option value="8">(8)Very Good</option>
+          <option value="7">(7)Good</option>
+          <option value="6">(6)Fine</option>
+          <option value="5">(5)Average</option>
+          <option value="4">(4)Bad</option>
+          <option value="3">(3)Very Bad</option>
+          <option value="2">(2)Horrible</option>
+          <option value="1">(1)Appaling</option>
+        </select>
+      </div>
+    </div>
+    <!-- Anime Synopsis Section -->
+    <div id="synopsis">
+      <p></p>
+    </div>
+  </div>
   <!-- Script -->
   <script src="script.js"></script>
 </body>
