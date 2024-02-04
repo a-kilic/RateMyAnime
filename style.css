@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap');
+
 html {
   box-sizing: border-box;
 }
@@ -5,4 +7,55 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  background-color: #f5f5f5;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23db1e1e' fill-opacity='0.3'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  font-family: Rubik, sans-serif;
 }
+
+/* Main Page */
+
+#main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 7rem;
+  background: url();
+  margin-bottom: 25px;
+  color: white;
+  background: rgb(45, 42, 42);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  border-radius: 10px;
+}
+
+/* Form */
+
+#search {
+  font-family: Rubik, sans-serif;
+  font-size: 2rem;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* Dark Mode Switch */
+
+.theme-switch-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.fa-solid {
+  font-size: 2rem;
+}
+
+.toggle-text {
+  font-size: 1rem;
+}
+
