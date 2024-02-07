@@ -7,55 +7,78 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #f5f5f5;
-  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23db1e1e' fill-opacity='0.3'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: Rubik, sans-serif;
 }
+
 
 /* Main Page */
 
-#main-wrapper {
+/* Navigation Bar */
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  height: 100vh;
+  padding: 10px 20px;
+  background-color: #333; 
 }
 
-h1 {
-  font-size: 7rem;
-  background: url();
-  margin-bottom: 25px;
+.logo {
   color: white;
-  background: rgb(45, 42, 42);
-  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
-  border-radius: 10px;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
 
-/* Form */
-
-#search {
+.my-list-button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
   font-family: Rubik, sans-serif;
-  font-size: 2rem;
-  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.my-list-button:hover {
+  filter: brightness(110%);
+}
+
+.my-list-button:active {
+  transform: translateY(5%);
+}
+
+
+/* Search Bar */
+
+form {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-radius: 28px;
+  background: #f6f6f6;
+}
+
+#search-input {
+  font-size: 16px;
+  font-family: Rubik, sans-serif;
+  color: white;
+  margin-left: 14px;
+  border: none;
+  background: transparent;
+  width: 300px;
+}
+
+#search-input:focus {
   outline: none;
 }
 
-/* Dark Mode Switch */
 
-.theme-switch-wrapper {
-  position: fixed;
-  top: 20px;
-  right: 50px;
-  display: flex;
-  align-items: center;
+#search-input::placeholder,
+.fa-magnifying-glass {
+  color: rgba(0, 0, 0, 0.5);
 }
-
-.fa-solid {
-  font-size: 2rem;
-}
-
-.toggle-text {
-  font-size: 1rem;
-}
-
