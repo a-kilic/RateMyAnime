@@ -9,39 +9,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Main Page -->
-  <div id="main-wrapper">
-    <!-- Header -->
-    <div class="header" id="main-header" hidden>
-      <h1>RateMyAnime</h1>
-    </div>
-    <!-- Search Bar -->
-    <form id="form">
-      <label hidden>Search Anime</label>
-      <input type="text" id="search" placeholder="Search for Anime...">
-      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="#" class="logo">RateMyAnime</a>
+    <form id="form" class="search-form">
+      <label hidden for="search-input">Search Anime</label>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="search" id="search-input" placeholder="Search for Anime...">
     </form>
-    <!-- Dark Mode Switch -->
-    <div class="theme-switch-wrapper">
-      <!-- Icon for Switch -->
-      <span id="toggle-icon" hidden>
-        <span class="toggle-text">Light Mode</span>
-        <i class="fa-solid fa-sun"></i>
-      </span>
-      <!-- Slider -->
-      <label class="theme-switch" hidden>
-        <input type="checkbox" id="dark-mode-toggle">
-        <div class="slider-round"></div>
-      </label>
-    </div>
-    <!-- My List Button -->
-    <div class="my-list" hidden>
-      <button id="list-btn">My Anime List</button>
-    </div>
-  </div>
+    <button class="my-list-button">My List <span><i class="fa-solid fa-list"></i></span></button>
+  </nav>
   <!-- Dynamic Anime Pages -->
   <div id="anime-page-container"></div>
   <!-- Script -->
-  <script src="script.js"></script>
+  <script src="fetchData.js" type="module"></script>
+  <script src="pageCreator.js" type="module"></script>
+  <script src="index.js" type="module"></script>
 </body>
 </html>
