@@ -1,4 +1,4 @@
-import { getAnimeData } from './fetchData.js';
+import { getAnimeData, searchInput } from './fetchData.js';
 
 const animePageContainer = document.getElementById('anime-page-container');
 
@@ -8,19 +8,14 @@ const animePageContainer = document.getElementById('anime-page-container');
 function createTitles(results) {
     results.forEach((titleData) => {
         const titleContainer = document.createElement('div');
-
-        const titleEn = document.createElement('h2');
-        titleEn.textContent = titleData.title_english;
-    
-        const titleJp = document.createElement('h2');
-        titleJp.textContent = titleData.title;
+        const title = document.createElement('h2');
+        title.textContent = titleData.title;
     
         // Append
-        titleContainer.append(titleEn, titleJp);
+        titleContainer.append(title);
         animePageContainer.appendChild(titleContainer);
     });
 }
-
 
 // Creating Images
 function createImages(results) {
@@ -118,6 +113,11 @@ function createSynopsis(results) {
 async function displayAnimePage() {
     // Clear previous content in animePageContainer
     animePageContainer.innerHTML = '';
+
+    // Check if searchInput value is empty
+    if (searchInput.value.trim() === '') {
+        return; 
+    }
 
     const results = await getAnimeData();
 
