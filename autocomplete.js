@@ -2,7 +2,6 @@ import { getAnimeData } from './fetchData.js';
 import { displayAnimePage } from './pageCreator.js'
 
 
-
 // Create dynamic results box
 
 function createResultsBox() {
