@@ -11,18 +11,23 @@
 <body>
   <!-- Navigation Bar -->
   <nav class="navbar">
-    <a href="#" class="logo">RateMyAnime</a>
-    <form id="form" class="search-form">
-      <label hidden for="search-input">Search Anime</label>
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="search" id="search-input" placeholder="Search for Anime...">
+    <div class="logo" title="RateMyAnime">RateMyAnime</div>
+    <form id="form" autocomplete="off">
+      <div class="search-container">
+        <label for="search-input" hidden>Search for Anime...</label>
+        <input type="text" id="search-input" placeholder="Search for Anime..." type="submit">
+        <button type="submit" class="search-button" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <!-- Dynamic results/search box -->
+      <div class="result-box"></div>
     </form>
-    <button class="my-list-button">My List <span><i class="fa-solid fa-list"></i></span></button>
+    <button class="my-list-button" title="My List">My List <span><i class="fa-solid fa-list"></i></span></button>
   </nav>
   <!-- Dynamic Anime Pages -->
   <div id="anime-page-container"></div>
   <!-- Script -->
   <script src="fetchData.js" type="module"></script>
+  <script src="autocomplete.js" type="module"></script>
   <script src="pageCreator.js" type="module"></script>
   <script src="index.js" type="module"></script>
 </body>
