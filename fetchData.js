@@ -1,4 +1,3 @@
-
 const searchInput = document.getElementById('search-input');
 
 let results = [];
@@ -16,4 +15,4 @@ async function getAnimeData() {
     }
 }
 
-export { getAnimeData };
+export { getAnimeData, searchInput, results };
