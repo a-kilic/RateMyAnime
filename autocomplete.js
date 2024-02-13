@@ -1,4 +1,4 @@
-import { getAnimeData } from './fetchData.js';
+import { getAnimeData, searchInput } from './fetchData.js';
 import { displayAnimePage } from './pageCreator.js'
 
 
@@ -26,7 +26,6 @@ function updateResults(results) {
 
     // Clear previous results
     resultsContainer.innerHTML = ''; 
-
     results.forEach(result => {
         const resultsListEl = document.createElement('li');
         const resultsLink = document.createElement('a');
@@ -42,7 +41,14 @@ function updateResults(results) {
 
 async function displayResults() {
     const results = await getAnimeData();
-    updateResults(results)
+    const resultBox = document.querySelector('.result-box');
+    // Check if input field is empty, if yes don't show result box, if no then show result box
+    if (searchInput.value.trim() === '' || results.length === 0) {
+        resultBox.style.display = 'none';
+    } else {
+        updateResults(results);
+        resultBox.style.display = 'block';
+    }
 }
 
 export { createResultsBox, displayResults, updateResults};
