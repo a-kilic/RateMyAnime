@@ -29,3 +29,11 @@ const debouncedDisplayResults = debounce(displayResults, 1000);
 searchInput.addEventListener('input', async () => {
     await debouncedDisplayResults();
 })
+
+// Add event listener to hide result box when clicking outside
+document.body.addEventListener('click', (event) => {
+    const resultBox = document.querySelector('.result-box');
+    if (event.target !== searchInput && event.target !== resultBox) {
+        resultBox.style.display = 'none';
+    }
+});
