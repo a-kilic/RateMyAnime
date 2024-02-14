@@ -23,12 +23,14 @@ body {
   align-items: center;
   background-color: #333;
   padding: 15px 20px;
+  z-index: 100;
 }
 
 .logo {
   color: white;
   font-size: 24px;
   user-select: none;
+  background: transparent;
 }
 
 /* Search Bar */
@@ -83,6 +85,7 @@ form#form {
   border: 1px solid #ccc;
   border-radius: 0 0 5px 5px;
   outline: none;
+  z-index: 100;
 }
 
 .result-box li {
@@ -127,22 +130,106 @@ form#form {
 
 /* Scroll bar */
 
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* Anime Pages */
+#anime-page-container {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  background: rgb(192, 192, 192);
+}
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  background: #494949;
+  margin-bottom: 20px;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer img {
+  box-shadow: 5px 2px 10px rgba(0, 0, 0, 1);
+}
+.scoreInfoContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.scoresDiv {
+  background: #333;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  border: 1px solid black;
+}
+
+.scoresDiv h3 {
+  margin-left: 20px;
+}
+
+/* Rating section */
+.ratingContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+select {
+  padding: 8px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  font-size: 16px;
+  background: #333;
+  color: white;
+  outline: none;
+}
+
+select option {
+  font-size: 14px;
+}
+
+select option:hover {
+  background: #4e4e4e;
+}
+
+/* Synopsis */
+
+.synopsisDiv {
+  position: relative;
+  text-align: left;
+  line-height: 1.5rem;
+  height: 5%;
+  width: 50%;
+  color: rgb(255, 255, 255);
+  background: #333;
+  margin: 0 auto;
 }
