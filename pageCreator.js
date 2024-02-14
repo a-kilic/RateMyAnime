@@ -8,6 +8,7 @@ const animePageContainer = document.getElementById('anime-page-container');
 function createTitles(results) {
     results.forEach((titleData) => {
         const titleContainer = document.createElement('div');
+        titleContainer.classList.add('titleContainer');
         const title = document.createElement('h2');
         title.textContent = titleData.title;
     
@@ -21,6 +22,7 @@ function createTitles(results) {
 function createImages(results) {
     results.forEach((imageData) => {
         const imageContainer = document.createElement('div');
+        imageContainer.classList.add('imageContainer')
 
         const imageElement = document.createElement('img');
         imageElement.setAttribute('src', imageData.images.jpg.image_url);
@@ -37,7 +39,9 @@ function createScoreInfo(results) {
     results.forEach((scoreData) => {
 
         const scoreInfoContainer = document.createElement('div');
+        scoreInfoContainer.classList.add('scoreInfoContainer');
         const scoresDiv = document.createElement('div');
+        scoresDiv.classList.add('scoresDiv');
         
         const rank = document.createElement('h3');
         rank.textContent = `Ranked #${scoreData.rank}`;
@@ -60,6 +64,7 @@ function createScoreInfo(results) {
 function createRatingSection(results) {
     results.forEach(() => {
         const ratingContainer = document.createElement('div');
+        ratingContainer.classList.add('ratingContainer');
 
         const label = document.createElement('label');
         label.setAttribute('for', 'rank-select');
@@ -101,6 +106,7 @@ function createRatingSection(results) {
 function createSynopsis(results) {
     results.forEach((synopsisData) => {
         const synopsisDiv = document.createElement('div');
+        synopsisDiv.classList.add('synopsisDiv');
         const text = document.createElement('p');
         text.textContent = synopsisData.synopsis;
     
@@ -110,7 +116,9 @@ function createSynopsis(results) {
     });
 }
 
-async function displayAnimePage() {
+
+
+async function displayAnimePage(result) {
     // Clear previous content in animePageContainer
     animePageContainer.innerHTML = '';
 
@@ -119,7 +127,7 @@ async function displayAnimePage() {
         return; 
     }
 
-    const results = await getAnimeData();
+    const results = [result];
 
     createTitles(results);
     createImages(results);
