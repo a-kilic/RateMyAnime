@@ -12,7 +12,7 @@ function createResultsBox() {
         const resultsUl = document.createElement('ul');
         const resultsListEl = document.createElement('li');
         const resultsLink = document.createElement('a');
-        resultsLink.setAttribute('a', displayAnimePage(result.title));
+        resultsLink.setAttribute('href', displayAnimePage(result.title));
 
         resultsListEl.appendChild(resultsLink);
         resultsUl.appendChild(resultsListEl);
@@ -31,7 +31,7 @@ function updateResults(results) {
         const resultsLink = document.createElement('a');
         resultsLink.textContent = result.title;
         resultsLink.setAttribute('href', '#');
-        resultsLink.addEventListener('click', () => displayAnimePage(result.title));
+        resultsLink.addEventListener('click', () => displayAnimePage(result));
 
         resultsListEl.appendChild(resultsLink);
         resultsContainer.appendChild(resultsListEl);
@@ -39,6 +39,7 @@ function updateResults(results) {
 }
 
 
+// Display results only if input field isn't empty
 async function displayResults() {
     const results = await getAnimeData();
     const resultBox = document.querySelector('.result-box');
