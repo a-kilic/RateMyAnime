@@ -233,3 +233,55 @@ select option:hover {
   background: #333;
   margin: 0 auto;
 }
+
+
+/* Media Queries */
+
+/* Styles for smartphones */
+@media (max-width: 428px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 35px;
+  }
+
+  .search-button {
+    position: absolute;
+    left: 280px;
+    font-size: 22px;
+  }
+
+  #search-input {
+    margin-bottom: 20px;
+    width: 300px;
+  }
+
+  .my-list-button {
+    position: relative;
+    bottom: 5px;
+  }
+
+  .result-box {
+    position: relative;
+    bottom: 22px;
+    width: 316px;
+  }
+
+  .synopsisDiv {
+    width: 100%;
+  }
+
+  .synopsisDiv p {
+    font-size: 15px;
+    text-align: left;
+    line-height: 25px;
+    width: 95%;
+  }
+}
