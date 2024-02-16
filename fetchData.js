@@ -1,7 +1,7 @@
 const searchInput = document.getElementById('search-input');
 
 let results = [];
-let recommendations = [];
+let topAnime = [];
 
 // Get Data from Jikan API
 async function getAnimeData() {
@@ -18,17 +18,19 @@ async function getAnimeData() {
 
 
 
-// Get Anime News Data from API
-async function getRecommendations() {
+// Get Top Anime Data from API
+async function getTopAnimes() {
     try {
-        const response = await fetch(`https://api.jikan.moe/v4/anime/1/recommendations`);
+        const response = await fetch(`https://api.jikan.moe/v4/top/anime`);
         const responseData = await response.json();
-        recommendations = responseData.data;
-        console.log(recommendations);
+        topAnime = responseData.data;
+        console.log(topAnime);
     } catch (error) {
-        console.log('An Error has occured: ',error);
+        console.log('An Error has occured: ', error);
     }
 }
 
+// On Load
+getTopAnimes();
 
-export { getAnimeData, searchInput, results, getRecommendations };
+export { getAnimeData, searchInput, results, getTopAnimes };
