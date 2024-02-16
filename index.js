@@ -6,6 +6,8 @@ import { searchInput } from './fetchData.js';
 const formEl = document.getElementById('form');
 
 // Event Listeners
+
+// Display on submit
 formEl.addEventListener('submit', async function(e) {
     e.preventDefault(); 
     await displayAnimePage();
