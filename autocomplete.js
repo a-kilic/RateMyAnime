@@ -31,7 +31,7 @@ function updateResults(results) {
         const resultsLink = document.createElement('a');
         resultsLink.textContent = result.title;
         resultsLink.setAttribute('href', '#');
-        resultsLink.addEventListener('click', () => displayAnimePage(result));
+        resultsListEl.addEventListener('click', () => displayAnimePage(result));
 
         resultsListEl.appendChild(resultsLink);
         resultsContainer.appendChild(resultsListEl);
