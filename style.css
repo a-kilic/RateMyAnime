@@ -238,7 +238,7 @@ select option:hover {
 /* Media Queries */
 
 /* Styles for smartphones */
-@media (max-width: 450px) {
+@media (max-width: 360px) {
   .navbar {
     display: flex;
     flex-direction: column;
