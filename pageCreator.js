@@ -107,11 +107,14 @@ function createSynopsis(results) {
     results.forEach((synopsisData) => {
         const synopsisDiv = document.createElement('div');
         synopsisDiv.classList.add('synopsisDiv');
+
         const text = document.createElement('p');
         text.textContent = synopsisData.synopsis;
+        const synopsisHeader = document.createElement('h3');
+        synopsisHeader.textContent = 'Synopsis:';
     
         // Append
-        synopsisDiv.appendChild(text);
+        synopsisDiv.append(synopsisHeader, text);
         animePageContainer.appendChild(synopsisDiv);
     });
 }
