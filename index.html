@@ -6,7 +6,12 @@
   <title>RateMyAnime</title>
   <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=css-tricks.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./CSS/base.css">
+  <link rel="stylesheet" href="./CSS/navbar.css">
+  <link rel="stylesheet" href="./CSS/scrollbar.css">
+  <link rel="stylesheet" href="./CSS/main-page.css">
+  <link rel="stylesheet" href="./CSS/anime-page.css">
+  <link rel="stylesheet" href="./CSS/media-queries.css">
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -22,10 +27,13 @@
     </form>
     <button class="my-list-button" title="My List">My List <span><i class="fa-solid fa-list"></i></span></button>
   </nav>
+  <!-- Dynamic Main Page with Top Animes -->
+  <div id="main-page"></div>
   <!-- Dynamic Anime Pages -->
   <div id="anime-page-container"></div>
   <!-- Script -->
   <script src="fetchData.js" type="module"></script>
+  <script src="mainPage.js" type="module"></script>
   <script src="autocomplete.js" type="module"></script>
   <script src="pageCreator.js" type="module"></script>
   <script src="index.js" type="module"></script>
