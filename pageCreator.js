@@ -1,4 +1,5 @@
-import { getAnimeData, searchInput } from './fetchData.js';
+import { searchInput } from './fetchData.js';
+import { mainPage } from './mainPage.js'; 
 
 const animePageContainer = document.getElementById('anime-page-container');
 
@@ -124,6 +125,9 @@ function createSynopsis(results) {
 async function displayAnimePage(result) {
     // Clear previous content in animePageContainer
     animePageContainer.innerHTML = '';
+
+    // Clear displayTopAnimes content
+    mainPage.innerHTML = '';
 
     // Check if searchInput value is empty
     if (searchInput.value.trim() === '') {
