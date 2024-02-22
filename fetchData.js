@@ -30,6 +30,9 @@ async function getTopAnimes() {
             const responseData = await response.json();
             topAnimeArray = responseData.data;
 
+            // Sort the topAnimeArray by rank
+            topAnimeArray.sort((a, b) => a.rank - b.rank);
+
             // Store data in localStorage
             localStorage.setItem('topAnimeData', JSON.stringify(topAnimeArray));
         } catch (error) {
