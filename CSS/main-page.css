@@ -14,6 +14,10 @@
     margin: 20px;
     background: rgb(63, 63, 63);
   }
+
+  .main-page-container:hover {
+    transform: translateY(-2%);
+  }
   
   /* Style for title */
   .main-page-container h1 {
@@ -38,8 +42,4 @@
     display: block;
     margin-top: 10px;
     cursor: pointer;
-  }
-  
-  img:hover {
-    transform: translateY(-5%);
   }
