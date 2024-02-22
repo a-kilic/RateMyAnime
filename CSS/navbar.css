@@ -13,6 +13,7 @@
     font-size: 24px;
     user-select: none;
     background: transparent;
+    cursor: pointer;
 }
   
 /* Search Bar */
