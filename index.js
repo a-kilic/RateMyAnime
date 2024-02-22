@@ -1,17 +1,8 @@
-import { displayAnimePage } from './pageCreator.js';
 import { displayResults } from './autocomplete.js';
 import { searchInput } from './fetchData.js'; 
 
 // Variables
-const formEl = document.getElementById('form');
-
-// Event Listeners
-
-// Display on submit
-formEl.addEventListener('submit', async function(e) {
-    e.preventDefault(); 
-    await displayAnimePage();
-});
+const logo = document.getElementById('logo');
 
 // Debounce function to optimize API requests
 function debounce(cb, delay) {
@@ -28,6 +19,8 @@ function debounce(cb, delay) {
 const debouncedDisplayResults = debounce(displayResults, 1000); 
 
 
+// Event Listeners
+
 searchInput.addEventListener('input', async () => {
     await debouncedDisplayResults();
 })
@@ -38,4 +31,9 @@ document.body.addEventListener('click', (event) => {
     if (event.target !== searchInput && event.target !== resultBox) {
         resultBox.style.display = 'none';
     }
+});
+
+// Add event listener to refresh site when clicking on logo
+logo.addEventListener('click', function() {
+    window.location.reload();
 });
