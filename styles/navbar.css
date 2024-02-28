@@ -39,7 +39,7 @@ form#form {
     color: white;
 }
   
-.search-button {
+#search-button {
     position: relative;
     top: 2px;
     right: 41px;
@@ -51,7 +51,7 @@ form#form {
     outline: none;
 }
   
-.search-button:hover {
+#search-button:hover {
     filter: brightness(90%);
 }
   
@@ -89,7 +89,7 @@ form#form {
 
 /* My List Button */
 
-.my-list-button {
+#my-list-button {
     background-color: #555;
     color: white;
     border: none;
@@ -99,14 +99,14 @@ form#form {
     cursor: pointer;
 }
 
-.my-list-button:hover {
+#my-list-button:hover {
     filter: brightness(90%);
 }
 
-.my-list-button:active {
+#my-list-button:active {
     transform: translateY(5%);
 }
 
-.my-list-button span {
+#my-list-button span {
     margin-left: 5px;
 }
