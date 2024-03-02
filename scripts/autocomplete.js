@@ -1,3 +1,4 @@
+import { removeList } from './animeList.js';
 import { getAnimeData, searchInput } from './fetchData.js';
 import { displayAnimePage } from './pageCreator.js'
 
@@ -31,7 +32,11 @@ function updateResults(results) {
         const resultsLink = document.createElement('a');
         resultsLink.textContent = result.title;
         resultsLink.setAttribute('href', '#');
-        resultsListEl.addEventListener('click', () => displayAnimePage(result));
+        resultsListEl.addEventListener('click', function() {
+            // Remove list if its displayed
+            removeList();
+            displayAnimePage(result)
+        });
 
         resultsListEl.appendChild(resultsLink);
         resultsContainer.appendChild(resultsListEl);
