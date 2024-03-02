@@ -1,7 +1,8 @@
 import { displayResults } from './autocomplete.js';
 import { searchInput } from './fetchData.js'; 
-import { displayList } from './animeList.js';
+import { displayList, removeList } from './animeList.js';
 import { mainPage } from './mainPage.js';
+import { removeAnimePage } from './pageCreator.js';
 
 // Variables
 const logo = document.getElementById('logo');
@@ -25,10 +26,6 @@ const debouncedDisplayResults = debounce(displayResults, 500);
 
 // Event Listeners
 
-searchBtn.addEventListener('submit', function(e) {
-    e.preventDefault();
-})
-
 searchInput.addEventListener('input', async () => {
     await debouncedDisplayResults();
 })
@@ -49,6 +46,8 @@ logo.addEventListener('click', function() {
 // Add event listener to display list page when clicking on "My List" button
 listBtn.addEventListener('click', function() {
     // Clear Page before showing list page
-    mainPage.innerHTML = '';
+    mainPage.innerHTML = ''; 
+    removeAnimePage();
+    removeList();
     displayList();
 })
