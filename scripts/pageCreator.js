@@ -38,7 +38,6 @@ function createImages(results) {
 // Creating Score Section
 function createScoreInfo(results) {
     results.forEach((scoreData) => {
-
         const scoreInfoContainer = document.createElement('div');
         scoreInfoContainer.classList.add('scoreInfoContainer');
         const scoresDiv = document.createElement('div');
@@ -63,7 +62,7 @@ function createScoreInfo(results) {
 
 // Creating Rating Section 
 function createRatingSection(results) {
-    results.forEach(() => {
+    results.forEach((result) => {
         const ratingContainer = document.createElement('div');
         ratingContainer.classList.add('ratingContainer');
 
@@ -73,6 +72,22 @@ function createRatingSection(results) {
         const select = document.createElement('select');
         select.setAttribute('id', 'rank-select');
     
+        // Add event listener to select element
+        select.addEventListener('change', (event) => {
+            const selectedRating = event.target.value;
+            const animeData = {
+                title: result.title,
+                image: result.images.jpg.image_url,
+                rating: selectedRating
+            };
+            // Call function to save rating
+            saveRating(animeData); 
+        });
+
+        // Get previously saved rating for this anime
+        let savedRatings = JSON.parse(localStorage.getItem('animeRatings')) || [];
+        let previousRating = savedRatings.find(item => item.title === result.title)?.rating;
+
         const ratings = [
             { value: "", label: "Rate Anime" },
             { value: "10", label: "(10) Masterpiece" },
@@ -88,20 +103,37 @@ function createRatingSection(results) {
         ];
     
         // Loop through ratings array and create option elements
-        for (let i = 0; i < ratings.length; i++) {
+        ratings.forEach((rating) => {
             const option = document.createElement('option');
-            option.value = ratings[i].value;
-            option.textContent = ratings[i].label;
+            option.value = rating.value;
+            option.textContent = rating.label;
+            // Set the previously saved rating as selected
+            if (rating.value === previousRating) {
+                option.selected = true;
+            }
             select.appendChild(option);
-        }
+        });
     
         // Append
         ratingContainer.append(label, select);
         animePageContainer.appendChild(ratingContainer);
-    });
-
+        });
 }
 
+// Function to save rating to localStorage
+function saveRating(animeData) {
+    let ratings = JSON.parse(localStorage.getItem('animeRatings')) || [];
+
+    // Check if a rating for this anime already exists
+    const existingRatingIndex = ratings.findIndex(item => item.title === animeData.title);
+    if (existingRatingIndex !== -1) {
+        // Remove the existing rating
+        ratings.splice(existingRatingIndex, 1);
+    }
+
+    ratings.push(animeData);
+    localStorage.setItem('animeRatings', JSON.stringify(ratings));
+}
 
 // Creating Anime Synopsis Section
 function createSynopsis(results) {
