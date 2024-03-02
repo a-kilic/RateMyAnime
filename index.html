@@ -6,12 +6,12 @@
   <title>RateMyAnime</title>
   <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=css-tricks.com">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="./CSS/base.css">
-  <link rel="stylesheet" href="./CSS/navbar.css">
-  <link rel="stylesheet" href="./CSS/scrollbar.css">
-  <link rel="stylesheet" href="./CSS/main-page.css">
-  <link rel="stylesheet" href="./CSS/anime-page.css">
-  <link rel="stylesheet" href="./CSS/media-queries.css">
+  <link rel="stylesheet" href="./styles/base.css">
+  <link rel="stylesheet" href="./styles/navbar.css">
+  <link rel="stylesheet" href="./styles/scrollbar.css">
+  <link rel="stylesheet" href="./styles/main-page.css">
+  <link rel="stylesheet" href="./styles/anime-page.css">
+  <link rel="stylesheet" href="./styles/media-queries.css">
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -19,23 +19,23 @@
     <div class="logo" title="RateMyAnime" id="logo">RateMyAnime</div>
     <form id="form" autocomplete="off">
       <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search for Anime..." type="submit" aria-label="Search for Anime...">
-        <button type="submit" class="search-button" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <input type="text" id="search-input" placeholder="Search for Anime..." aria-label="Search for Anime...">
+        <button type="submit" id="search-button" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
       <!-- Dynamic results/search box -->
       <div class="result-box"></div>
     </form>
-    <button class="my-list-button" title="My List">My List <span><i class="fa-solid fa-list"></i></span></button>
+    <button id="my-list-button" title="My List">My List <span><i class="fa-solid fa-list"></i></span></button>
   </nav>
   <!-- Dynamic Main Page with Top Animes -->
   <div id="main-page"></div>
   <!-- Dynamic Anime Pages -->
   <div id="anime-page-container"></div>
   <!-- Script -->
-  <script src="fetchData.js" type="module"></script>
-  <script src="mainPage.js" type="module"></script>
-  <script src="autocomplete.js" type="module"></script>
-  <script src="pageCreator.js" type="module"></script>
-  <script src="index.js" type="module"></script>
+  <script src="./scripts/fetchData.js" type="module"></script>
+  <script src="./scripts/mainPage.js" type="module"></script>
+  <script src="./scripts/autocomplete.js" type="module"></script>
+  <script src="./scripts/pageCreator.js" type="module"></script>
+  <script src="./scripts/index.js" type="module"></script>
 </body>
 </html>
