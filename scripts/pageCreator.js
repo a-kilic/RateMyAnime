@@ -175,4 +175,9 @@ async function displayAnimePage(result) {
     createSynopsis(results);
 }
 
-export { createTitles, createImages, createScoreInfo, createRatingSection, createSynopsis, displayAnimePage };
+function removeAnimePage() {
+    // Clear the content inside animePageContainer
+    animePageContainer.innerHTML = '';
+}
+
+export { createTitles, createImages, createScoreInfo, createRatingSection, createSynopsis, displayAnimePage, removeAnimePage };
