@@ -1,0 +1,55 @@
+/* Style for the list header */
+.list-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Style for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Style for table headers */
+th {
+    background: #1b1b1b;
+    padding: 10px;
+    text-align: left;
+    color: white;
+}
+
+/* Style for table rows */
+tr {
+    border-bottom: 1px solid #000000;
+    background: rgb(114, 114, 114);
+}
+
+/* Style for table data cells */
+td {
+    padding: 10px;
+    color: white;
+}
+
+/* Style for images within table cells */
+td img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+/* Style for alternating row colors */
+tr:nth-child(even) {
+    background: #424242;
+}
+
+/* Style for hover effect on rows */
+tr:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+/* Prevent color change on hover for table headers */
+th:hover {
+    background: #1b1b1b;
+    cursor: default;
+}
