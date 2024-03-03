@@ -2,16 +2,6 @@ const animeList = document.getElementById('anime-list');
 
 // Dynamically creating table
 
-function createTitle() {
-    const headerContainer = document.createElement('div');
-    const header = document.createElement('h1');
-    header.classList.add('list-header');
-    header.textContent = 'Your Anime List';
-
-    // Append
-    headerContainer.appendChild(header);
-}
-
 function createList() {
     // Creating table headers
     const table = document.createElement('table');
@@ -83,8 +73,6 @@ function clearList() {
 function displayList() {
     // Clear existing List
     clearList();
-
-    createTitle();
     createList();
 }
 
