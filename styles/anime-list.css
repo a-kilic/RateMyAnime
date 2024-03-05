@@ -48,8 +48,22 @@ tr:hover {
     cursor: pointer;
 }
 
-/* Prevent color change on hover for table headers */
-th:hover {
-    background: #1b1b1b;
-    cursor: default;
+/* Design for delete button */
+
+.delete-button {
+    background: transparent;
+    color: #ffffff; 
+    border: none; 
+    padding: 4px 6px; 
+    cursor: pointer; 
+    border-radius: 5px;
+}
+
+.delete-button i {
+    font-size: 18px; 
+    color: white;
+}
+
+.delete-button:active {
+    transform: translateY(2px);
 }
