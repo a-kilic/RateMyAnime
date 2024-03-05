@@ -10,15 +10,21 @@ function createList() {
 
     const tableAnimeAmount = document.createElement('th');
     tableAnimeAmount.textContent = '#';
+
     const tableAnimeImage = document.createElement('th');
     tableAnimeImage.textContent = 'Image';
+
     const tableAnimeTitle = document.createElement('th');
     tableAnimeTitle.textContent = 'Anime Title';
+
     const tableAnimeScore = document.createElement('th');
     tableAnimeScore.textContent = 'Score';
 
+    const tableDelete = document.createElement('th');
+    tableDelete.textContent = 'Delete';
+
     // Append <th> to <tr> and append both to <thead> & <table>
-    tableRow.append(tableAnimeAmount, tableAnimeImage, tableAnimeTitle, tableAnimeScore);
+    tableRow.append(tableAnimeAmount, tableAnimeImage, tableAnimeTitle, tableAnimeScore, tableDelete);
     tableHead.appendChild(tableRow);
     table.appendChild(tableHead);
 
@@ -48,8 +54,27 @@ function createList() {
             const scoreCell = document.createElement('td');
             scoreCell.textContent = anime.rating;
 
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-button');
+            
+            deleteButton.addEventListener('click', () => {
+                // Remove the anime from localStorage
+                animeRatings.splice(index, 1);
+                // Update localStorage
+                localStorage.setItem('animeRatings', JSON.stringify(animeRatings));
+                // Re-render the list
+                displayList();
+            });
+
+            const deleteIcon = document.createElement('i');
+            deleteIcon.classList.add('fa-solid', 'fa-xmark');
+            deleteButton.appendChild(deleteIcon);
+
+            const deleteCell = document.createElement('td');
+            deleteCell.appendChild(deleteButton);
+
             // Append cells to tableRow
-            tableRow.append(numberCell, imageCell, titleCell, scoreCell);
+            tableRow.append(numberCell, imageCell, titleCell, scoreCell, deleteCell);
 
             // Append the row to the table body
             tableBody.appendChild(tableRow);
