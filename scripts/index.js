@@ -30,6 +30,11 @@ searchInput.addEventListener('input', async () => {
     await debouncedDisplayResults();
 })
 
+// Prevent default browser behavior
+searchBtn.addEventListener('click', async (event) => {
+    event.preventDefault();
+});
+
 // Add event listener to hide result box when clicking outside
 document.body.addEventListener('click', (event) => {
     const resultBox = document.querySelector('.result-box');
