@@ -1,45 +1,61 @@
 /* Main Page Top 25 Animes */
 #main-page {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-  }
-  
-  .main-page-container {
-    width: 300px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 20px;
-    background: rgb(63, 63, 63);
-  }
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
 
-  .main-page-container:hover {
-    transform: translateY(-2%);
-  }
-  
-  /* Style for title */
-  .main-page-container h1 {
-    font-size: 24px;
-    color: #ffffff;
-  }
-  
-  /* Style for rank */
-  .main-page-container h2 {
-    font-size: 20px;
-    color: #ffffff;
-  }
-  
-  .main-page-container h3 {
-    color: rgb(182, 182, 182);
-  }
-  
-  /* Style for image */
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-top: 10px;
-    cursor: pointer;
-  }
+.main-page-container {
+  width: 300px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 20px;
+  background: rgb(63, 63, 63);
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+}
+
+.main-page-container:hover {
+  transform: translateY(-2%);
+}
+
+/* Style for title */
+.main-page-container h3 {
+  margin: 0; 
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Style for rank */
+.main-page-container h2 {
+  font-size: 20px;
+  color: #ffffff;
+  height: 24px; 
+  margin-bottom: 25px;
+}
+
+.main-page-container h3 {
+  color: rgb(182, 182, 182);
+}
+
+.main-page-container img {
+  height: 300px; 
+}
+
+/* Style for image */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+  cursor: pointer;
+  align-self: center; 
+}
