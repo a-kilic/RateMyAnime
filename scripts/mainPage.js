@@ -5,6 +5,17 @@ const mainPage = document.getElementById('main-page');
 async function displayTopAnimes() {
     await getTopAnimes();
 
+    // Creating Title for Top 25 Animes
+    const heading = document.createElement('h1');
+    heading.textContent = "Top 25 Current Animes";
+    heading.classList.add('main-title');
+    mainPage.appendChild(heading);
+
+    // Create container for anime containers
+    const animeContainer = document.createElement('div');
+    animeContainer.classList.add('anime-container');
+    mainPage.appendChild(animeContainer);
+    
     // Iterate over each anime in topAnimeArray
     topAnimeArray.forEach(anime => {
         // Create container
@@ -27,7 +38,7 @@ async function displayTopAnimes() {
         mainPageContainer.appendChild(topImage);
 
         // Append
-        mainPage.appendChild(mainPageContainer);
+        animeContainer.appendChild(mainPageContainer);
     });
 }
 
