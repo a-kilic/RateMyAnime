@@ -1,8 +1,23 @@
 /* Main Page Top 25 Animes */
 #main-page {
+  text-align: center; 
+}
+
+.main-title {
+  background: rgba(0, 0, 0, 0.4);
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 20px; 
+  font-size: 60px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgb(255, 255, 255);
+  user-select: none;
+}
+
+.anime-container {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
 }
 
