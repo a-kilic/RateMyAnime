@@ -9,6 +9,8 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    height: auto;
+    table-layout: fixed;
 }
 
 /* Style for table headers */
@@ -42,11 +44,6 @@ tr:nth-child(even) {
     background: #424242;
 }
 
-/* Style for hover effect on rows */
-tr:hover {
-    filter: brightness(80%);
-    cursor: pointer;
-}
 
 /* Design for delete button */
 
