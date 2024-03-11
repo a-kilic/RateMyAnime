@@ -18,6 +18,12 @@ async function displayTopAnimes() {
     
     // Iterate over each anime in topAnimeArray
     topAnimeArray.forEach(anime => {
+        // Create anchor element linking to specific MAL page
+        const topLink = document.createElement('a');
+        topLink.setAttribute('href', anime.url);
+        topLink.setAttribute('target', '_blank');
+        topLink.classList.add('anime-link');
+        
         // Create container
         const mainPageContainer = document.createElement('div');
         mainPageContainer.classList.add('main-page-container')
@@ -37,8 +43,11 @@ async function displayTopAnimes() {
         topImage.setAttribute('src', anime.images.jpg.image_url);
         mainPageContainer.appendChild(topImage);
 
-        // Append
-        animeContainer.appendChild(mainPageContainer);
+        // Append container to anchor
+        topLink.appendChild(mainPageContainer);
+
+        // Append anchor to the anime container
+        animeContainer.appendChild(topLink);
     });
 }
 
