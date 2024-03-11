@@ -21,6 +21,10 @@
   justify-content: center;
 }
 
+.anime-link {
+  text-decoration: none;
+}
+
 .main-page-container {
   width: 300px;
   border: 1px solid #000000;
@@ -71,6 +75,5 @@ img {
   height: auto;
   display: block;
   margin-top: 10px;
-  cursor: pointer;
   align-self: center; 
 }
