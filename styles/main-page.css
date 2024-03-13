@@ -41,6 +41,11 @@
 
 .main-page-container:hover {
   transform: translateY(-2%);
+  filter: brightness(110%);
+}
+
+.main-page-container:active {
+  transform: translateY(1%)
 }
 
 /* Style for title */
