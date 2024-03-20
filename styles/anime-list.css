@@ -19,6 +19,7 @@ th {
 tr {
     border-bottom: 1px solid #000000;
     background: rgb(114, 114, 114);
+    height: 50px;
 }
 
 /* Style for table data cells */
@@ -31,6 +32,7 @@ td {
 td img {
     max-width: 100px;
     max-height: 100px;
+    border: 1px solid white;
 }
 
 /* Style for alternating row colors */
