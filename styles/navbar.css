@@ -107,6 +107,71 @@ form#form {
     transform: translateY(5%);
 }
 
-#my-list-button span {
-    margin-left: 5px;
+/* Media Queries */
+
+@media (max-width: 1189px) {
+    #search-input {
+        width: 650px;
+    }
+
+    .result-box {
+        width: 666px;
+    }
+}
+
+@media (max-width: 1184px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    #search-input {
+        margin-top: 5px;
+        width: 500px;
+    }
+
+    .result-box {
+        width: 516px;
+    }
+
+    #my-list-button {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 643px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    #search-input {
+        margin-top: 5px;
+        width: 300px;
+    }
+
+    .result-box {
+        width: 316px;
+    }
+
+    #my-list-button {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 443px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    #search-input {
+        margin-top: 5px;
+        width: 200px;
+    }
+
+    .result-box {
+        width: 216px;
+    }
+
+    #my-list-button {
+        margin-top: 10px;
+    }
 }
