@@ -82,3 +82,35 @@ img {
   margin-top: 10px;
   align-self: center; 
 }
+
+/* Media Queries */
+
+@media (max-width: 703px) {
+  .main-title {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 537px) {
+  .main-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 483px) {
+  .main-title {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 428px) {
+  .main-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 373px) {
+  .main-title {
+    font-size: 25px;
+  }
+}
