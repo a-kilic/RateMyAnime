@@ -6,7 +6,6 @@ import { removeAnimePage } from './pageCreator.js';
 
 // Variables
 const logo = document.getElementById('logo');
-const searchBtn = document.getElementById('search-button');
 const listBtn = document.getElementById('my-list-button');
 
 // Debounce function to optimize API requests
@@ -29,11 +28,6 @@ const debouncedDisplayResults = debounce(displayResults, 500);
 searchInput.addEventListener('input', async () => {
     await debouncedDisplayResults();
 })
-
-// Prevent default browser behavior
-searchBtn.addEventListener('click', async (event) => {
-    event.preventDefault();
-});
 
 // Add event listener to hide result box when clicking outside
 document.body.addEventListener('click', (event) => {
