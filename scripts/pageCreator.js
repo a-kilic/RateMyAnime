@@ -89,7 +89,7 @@ function createRatingSection(results) {
         let previousRating = savedRatings.find(item => item.title === result.title)?.rating;
 
         const ratings = [
-            { value: "", label: "Rate Anime" },
+            { value: "", label: "Add to List" },
             { value: "10", label: "(10) Masterpiece" },
             { value: "9", label: "(9) Great" },
             { value: "8", label: "(8) Very Good" },
